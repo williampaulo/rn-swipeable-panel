@@ -164,7 +164,7 @@ export default class SwipeablePanel extends React.Component {
 
 	render() {
 		const { showComponent, opacity } = this.state;
-		const { noBackgroundOpacity } = this.props;
+		const { noBackgroundOpacity, onPressCloseButton, onPressArrowBackButton } = this.props;
 
 		return showComponent ? (
 			<Animated.View
@@ -182,8 +182,8 @@ export default class SwipeablePanel extends React.Component {
 					{...this._panResponder.panHandlers}
 				>
 					<Bar />
-					{this.props.onPressArrowBackButton && <ArrowBack onPress={this.onPressArrowBackButton} />}
-					{this.props.onPressCloseButton && <Close onPress={this.onPressCloseButton} />}					
+					{onPressArrowBackButton && <ArrowBack onPress={onPressArrowBackButton} />}
+					{onPressCloseButton && <Close onPress={this.onPressCloseButton} />}					
 					<ScrollView contentContainerStyle={{ width: '100%' }}>
 						{this.state.canScroll ? (
 							<TouchableHighlight>
