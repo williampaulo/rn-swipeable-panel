@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, ScrollView, TouchableHighlight, Animated, Dimensions, PanResponder, Easing } from 'react-native';
 import { Bar } from './Bar';
 import { Close } from './Close';
+import { ArrowBack } from './ArrowBack';
 
 import PropTypes from 'prop-types';
 
@@ -180,7 +181,8 @@ export default class SwipeablePanel extends React.Component {
 					{...this._panResponder.panHandlers}
 				>
 					<Bar />
-					{this.props.onPressCloseButton && <Close onPress={this.onPressCloseButton} />}
+					{this.props.onPressArrowBackButton && <ArrowBack onPress={this.onPressArrowBackButton} />}
+					{this.props.onPressCloseButton && <Close onPress={this.onPressCloseButton} />}					
 					<ScrollView contentContainerStyle={{ width: '100%' }}>
 						{this.state.canScroll ? (
 							<TouchableHighlight>
