@@ -16,6 +16,7 @@ export default class SwipeablePanel extends React.Component {
 		onClose: PropTypes.func,
 		fullWidth: PropTypes.bool,
 		onPressCloseButton: PropTypes.func,
+		onPressArrowBackButton: PropTypes.func,
 		noBackgroundOpacity: PropTypes.bool
 	};
 
